@@ -1,5 +1,6 @@
 from flask import Flask, make_response, request, render_template
 import os
+from src.hola import hello
 
 app = Flask(__name__)
 
@@ -11,6 +12,10 @@ def landing_page():
 @app.route("/info")
 def limit_page():
     return render_template('info.html')
+
+@app.route("/hello")
+def say():
+    return hello()
 
 
 # configurar lo que va dentro de PORT es súper importante
